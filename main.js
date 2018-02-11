@@ -1,3 +1,4 @@
+
 var parades = [
   {
     parade: "Krewe of Iris",
@@ -133,4 +134,22 @@ var parades = [
   }
 ];
 
+$(function(){
+      function getLocation(event) {
+            //alert('some anchor clicked');
+            console.log("event :: ", event);
+            console.log("event.currentTarget :: ", event.currentTarget);
+            console.log("event.currentTarget.id :: ", event.currentTarget.id);
+            let selectedLocation = event.currentTarget.id;
+            listParadesbyLocation(selectedLocation);
+            return false;
+      }
+      //$('#paradeDropdown').click(yourfunction);
+      //$('a.dropdown').click(yourfunction);
+      $('#anchorlist > a').click(getLocation);
+});
+
+function listParadesbyLocation(thisLocation) {
+	console.log("listing parades for ", thisLocation);
+};
 

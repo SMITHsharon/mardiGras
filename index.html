@@ -78,7 +78,7 @@
         </select>
       </div>
     -->
-    <div class="dropdown is-hoverable">
+    <div id="paradeDropdown" class="dropdown is-hoverable">
       <div class="dropdown-trigger">
         <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
           <span>List Parades by ... </span>
@@ -88,27 +88,25 @@
         </button>
       </div>
       <div class="dropdown-menu" id="dropdown-menu" role="menu">
-        <div class="dropdown-content">
-
+        <div id="anchorlist" class="dropdown-content">
           <a class="dropdown-item" href="#">
             ... Location
           </a>
 
-          <hr class="dropdown-divider" href="#">
-          <a class="dropdown-item">
+          <a id="covington" class="dropdown-item">
             Covington
           </a>
-          <a class="dropdown-item" href="#">
+          <a id="metairie" class="dropdown-item" href="#">
             Metairie
           </a>
-          <a class="dropdown-item" href="#">
+          <a id="midtown" class="dropdown-item" href="#">
             Midtown
           </a>
           </a>
-          <a class="dropdown-item" href="#">
+          <a id="uptown" class="dropdown-item" href="#">
             Uptown
           </a>
-          <a class="dropdown-item" href="#">
+          <a id="westbank" class="dropdown-item" href="#">
             Westbank
           </a>
 
@@ -128,7 +126,12 @@
       </div>
     </section>
 
+    <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
     <script src="./node_modules/moment/moment.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 
   </body>
 </html>
