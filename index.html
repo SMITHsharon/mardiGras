@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Develop Launchpad Mardi Gras App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -12,13 +12,14 @@
   <body>
 
     <section class="section">
-    
+      
       <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <img id="logoImage" src="/images/mardi gras logo.jpeg" alt="mardiGrasLogo">
         </div>
+      </nav>
 
-
+<!--
         <div class="navbar-menu">
 
           <div class="navbar-item has-dropdown is-hoverable">
@@ -56,16 +57,75 @@
           </div>
         </div>
       </nav>
+    -->
 
       <div class="container column is-three-fifths is-offset-one-fifth">
         <h1 class="title">
           Mardi Gras Parades Map
         </h1>
+        <!--
         <p class="subtitle">
           Parades List
         </p>
+      -->
+      <!--
+      <div>
+        <select id="selectElement" name="select">
+          <option value="initState" selected>Choose A Season Here!</option> 
+          <option value="winter">Winter</option> 
+          <option value="autumn">Autumn</option>
+          <option value="spring">Spring</option>
+        </select>
+      </div>
+    -->
+    <div class="dropdown is-hoverable">
+      <div class="dropdown-trigger">
+        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+          <span>List Parades by ... </span>
+          <span class="icon is-small">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>
+        </button>
+      </div>
+      <div class="dropdown-menu" id="dropdown-menu" role="menu">
+        <div class="dropdown-content">
+
+          <a class="dropdown-item" href="#">
+            ... Location
+          </a>
+
+          <hr class="dropdown-divider" href="#">
+          <a class="dropdown-item">
+            Covington
+          </a>
+          <a class="dropdown-item" href="#">
+            Metairie
+          </a>
+          <a class="dropdown-item" href="#">
+            Midtown
+          </a>
+          </a>
+          <a class="dropdown-item" href="#">
+            Uptown
+          </a>
+          <a class="dropdown-item" href="#">
+            Westbank
+          </a>
+
+          <hr class="dropdown-divider" href="#">
+          <a class="dropdown-item">
+            ... Time
+          </a>
+        </div>
+      </div>
+    </div>
+
+      <!-- container for output written to DOM -->
+      <div id="paradeData">
+        <!-- parade information is written here by jQuery -->
       </div>
 
+      </div>
     </section>
 
     <script src="./node_modules/moment/moment.js"></script>
