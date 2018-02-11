@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+  </head>
+  <body>
+
+    <section class="section">
+    
+      <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <img id="logoImage" src="/images/mardi gras logo.jpeg" alt="mardiGrasLogo">
+        </div>
+
+
+        <div class="navbar-menu">
+
+          <div class="navbar-item has-dropdown is-hoverable">
+
+            <div>
+              <a class="navbar-item">
+                Parades by Location...
+              </a>
+            </div>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                Covington
+              </a>
+              <a class="navbar-item">
+                Metairie
+              </a>
+              <a class="navbar-item">
+                Midtown
+              </a>
+              </a>
+              <a class="navbar-item">
+                Uptown
+              </a>
+              <a class="navbar-item">
+                Westbank
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <a class="navbar-item">
+              Parades by Time...
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container column is-three-fifths is-offset-one-fifth">
+        <h1 class="title">
+          Mardi Gras Parades Map
+        </h1>
+        <p class="subtitle">
+          Parades List
+        </p>
+      </div>
+
+    </section>
+
+    <script src="./node_modules/moment/moment.js"></script>
+
+  </body>
+</html>
