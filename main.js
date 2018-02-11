@@ -149,7 +149,31 @@ $(function(){
       $('#anchorlist > a').click(getLocation);
 });
 
+
+// ******************************************************
+// function writes the Parades for the selected Location 
+// to the DOM
+// ******************************************************
 function listParadesbyLocation(thisLocation) {
+
 	console.log("listing parades for ", thisLocation);
+
+	let domString = "";
+
+	domString += `<div><h2>Parades in ${thisLocation}</h2>`;
+	domString += `<tbody>`;
+	for (var key in parades){
+		if (parades[key].location === thisLocation) 
+		{
+			domString += `<tr>`;
+			domString += `<td>parades[key].parade</td>`;
+			domString += `<td>parades[key].date</td>`;
+			domString += `<td>parades[key].time</td>`;
+			domString += `</tr>`;
+		}
+	}
+	domString += `</tbody>`;
+	domString += `</div>`;
+	$("#paradeOutputByLocation").html(domString);
 };
 

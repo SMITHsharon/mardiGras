@@ -17,47 +17,43 @@
         <div class="navbar-brand">
           <img id="logoImage" src="/images/mardi gras logo.jpeg" alt="mardiGrasLogo">
         </div>
-      </nav>
 
-<!--
         <div class="navbar-menu">
 
           <div class="navbar-item has-dropdown is-hoverable">
 
             <div>
               <a class="navbar-item">
-                Parades by Location...
+                List Parades for
               </a>
-            </div>
-
-            <div class="navbar-dropdown">
-              <a class="navbar-item">
+            
+            <div id="anchorlist" class="navbar-dropdown">
+              <a id="covington" class="navbar-item">
                 Covington
               </a>
-              <a class="navbar-item">
+              <a id="metairie" class="navbar-item">
                 Metairie
               </a>
-              <a class="navbar-item">
+              <a id="midtown" class="navbar-item">
                 Midtown
               </a>
               </a>
-              <a class="navbar-item">
+              <a id="uptown" class="navbar-item">
                 Uptown
               </a>
-              <a class="navbar-item">
+              <a id="westbank" class="navbar-item">
                 Westbank
               </a>
             </div>
           </div>
+        </div>
 
-          <div>
-            <a class="navbar-item">
-              Parades by Time...
-            </a>
-          </div>
+        <div>
+          <a id="byTime" class="navbar-item">
+            Parades by Time...
+          </a>
         </div>
       </nav>
-    -->
 
       <div class="container column is-three-fifths is-offset-one-fifth">
         <h1 class="title">
@@ -77,49 +73,49 @@
           <option value="spring">Spring</option>
         </select>
       </div>
-    -->
-    <div id="paradeDropdown" class="dropdown is-hoverable">
-      <div class="dropdown-trigger">
-        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-          <span>List Parades by ... </span>
-          <span class="icon is-small">
-            <i class="fas fa-angle-down" aria-hidden="true"></i>
-          </span>
-        </button>
-      </div>
-      <div class="dropdown-menu" id="dropdown-menu" role="menu">
-        <div id="anchorlist" class="dropdown-content">
-          <a class="dropdown-item" href="#">
-            ... Location
-          </a>
+      <div id="paradeDropdown" class="dropdown is-hoverable">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+            <span>List Parades by ... </span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div id="anchorlist" class="dropdown-content">
+            <a class="dropdown-item" href="#">
+              ... Location
+            </a>
 
-          <a id="covington" class="dropdown-item">
-            Covington
-          </a>
-          <a id="metairie" class="dropdown-item" href="#">
-            Metairie
-          </a>
-          <a id="midtown" class="dropdown-item" href="#">
-            Midtown
-          </a>
-          </a>
-          <a id="uptown" class="dropdown-item" href="#">
-            Uptown
-          </a>
-          <a id="westbank" class="dropdown-item" href="#">
-            Westbank
-          </a>
+            <a id="covington" class="dropdown-item">
+              Covington
+            </a>
+            <a id="metairie" class="dropdown-item" href="#">
+              Metairie
+            </a>
+            <a id="midtown" class="dropdown-item" href="#">
+              Midtown
+            </a>
+            </a>
+            <a id="uptown" class="dropdown-item" href="#">
+              Uptown
+            </a>
+            <a id="westbank" class="dropdown-item" href="#">
+              Westbank
+            </a>
 
-          <hr class="dropdown-divider" href="#">
-          <a class="dropdown-item">
-            ... Time
-          </a>
+            <hr class="dropdown-divider" href="#">
+            <a class="dropdown-item">
+              ... Time
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+      -->
 
       <!-- container for output written to DOM -->
-      <div id="paradeData">
+      <div id="paradeOutputByLocation">
         <!-- parade information is written here by jQuery -->
       </div>
 
