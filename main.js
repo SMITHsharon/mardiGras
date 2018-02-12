@@ -136,10 +136,6 @@ var parades = [
 
 $(function(){
       function getLocation(event) {
-            //alert('some anchor clicked');
-            console.log("event :: ", event);
-            console.log("event.currentTarget :: ", event.currentTarget);
-            console.log("event.currentTarget.id :: ", event.currentTarget.id);
             let selectedLocation = event.currentTarget.id;
             listParadesbyLocation(selectedLocation);
             return false;
@@ -149,6 +145,30 @@ $(function(){
       $('#anchorlist > a').click(getLocation);
 });
 
+
+$(function(){
+	function getByTimes(event) {
+            //alert('some anchor clicked');
+            console.log("event :: ", event);
+            console.log("event.currentTarget :: ", event.currentTarget);
+            console.log("event.currentTarget.id :: ", event.currentTarget.id);
+            let selectedTime = event.currentTarget.id;
+            console.log("selectedTime :: ", selectedTime);
+            listParadesByTime(selectedTime);
+            return false;
+	}
+	$('#timeAnchorlist > a').click(getByTimes);
+});
+
+
+// ******************************************************
+// function writes the Parades for the selected Location 
+// to the DOM
+// ******************************************************
+function listParadesByTime(thisTime) {
+
+	console.log("listing parades for ", thisTime);
+};
 
 // ******************************************************
 // function writes the Parades for the selected Location 
@@ -174,7 +194,7 @@ function listParadesbyLocation(thisLocation) {
 				firstParade = false;
 			}
 	}
-	
+
 	$("#paradeOutputByLocation").html(domString);
 };
 
