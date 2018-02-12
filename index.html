@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Develop Launchpad Mardi Gras App</title>
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -12,12 +13,11 @@
   <body>
 
     <section class="section">
-    
+      
       <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <img id="logoImage" src="/images/mardi gras logo.jpeg" alt="mardiGrasLogo">
         </div>
-
 
         <div class="navbar-menu">
 
@@ -25,35 +25,34 @@
 
             <div>
               <a class="navbar-item">
-                Parades by Location...
+                List Parades for
               </a>
-            </div>
-
-            <div class="navbar-dropdown">
-              <a class="navbar-item">
+            
+            <div id="anchorlist" class="navbar-dropdown">
+              <a id="Covington" class="navbar-item">
                 Covington
               </a>
-              <a class="navbar-item">
+              <a id="Metairie" class="navbar-item">
                 Metairie
               </a>
-              <a class="navbar-item">
+              <a id="Midtown" class="navbar-item">
                 Midtown
               </a>
               </a>
-              <a class="navbar-item">
+              <a id="Uptown" class="navbar-item">
                 Uptown
               </a>
-              <a class="navbar-item">
+              <a id="Westbank" class="navbar-item">
                 Westbank
               </a>
             </div>
           </div>
+        </div>
 
-          <div>
-            <a class="navbar-item">
-              Parades by Time...
-            </a>
-          </div>
+        <div>
+          <a id="byTime" class="navbar-item">
+            Parades by Time...
+          </a>
         </div>
       </nav>
 
@@ -61,14 +60,75 @@
         <h1 class="title">
           Mardi Gras Parades Map
         </h1>
+        <!--
         <p class="subtitle">
           Parades List
         </p>
+      -->
+      <!--
+      <div>
+        <select id="selectElement" name="select">
+          <option value="initState" selected>Choose A Season Here!</option> 
+          <option value="winter">Winter</option> 
+          <option value="autumn">Autumn</option>
+          <option value="spring">Spring</option>
+        </select>
+      </div>
+      <div id="paradeDropdown" class="dropdown is-hoverable">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+            <span>List Parades by ... </span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div id="anchorlist" class="dropdown-content">
+            <a class="dropdown-item" href="#">
+              ... Location
+            </a>
+
+            <a id="covington" class="dropdown-item">
+              Covington
+            </a>
+            <a id="metairie" class="dropdown-item" href="#">
+              Metairie
+            </a>
+            <a id="midtown" class="dropdown-item" href="#">
+              Midtown
+            </a>
+            </a>
+            <a id="uptown" class="dropdown-item" href="#">
+              Uptown
+            </a>
+            <a id="westbank" class="dropdown-item" href="#">
+              Westbank
+            </a>
+
+            <hr class="dropdown-divider" href="#">
+            <a class="dropdown-item">
+              ... Time
+            </a>
+          </div>
+        </div>
+      </div>
+      -->
+
+      <!-- container for output written to DOM -->
+      <div id="paradeOutputByLocation">
+        <!-- parade information is written here by jQuery -->
       </div>
 
+      </div>
     </section>
 
+    <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
     <script src="./node_modules/moment/moment.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 
   </body>
 </html>

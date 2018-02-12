@@ -1,3 +1,4 @@
+
 var parades = [
   {
     parade: "Krewe of Iris",
@@ -133,4 +134,55 @@ var parades = [
   }
 ];
 
+$(function(){
+      function getLocation(event) {
+            //alert('some anchor clicked');
+            console.log("event :: ", event);
+            console.log("event.currentTarget :: ", event.currentTarget);
+            console.log("event.currentTarget.id :: ", event.currentTarget.id);
+            let selectedLocation = event.currentTarget.id;
+            listParadesbyLocation(selectedLocation);
+            return false;
+      }
+      //$('#paradeDropdown').click(yourfunction);
+      //$('a.dropdown').click(yourfunction);
+      $('#anchorlist > a').click(getLocation);
+});
+
+
+// ******************************************************
+// function writes the Parades for the selected Location 
+// to the DOM
+// ******************************************************
+function listParadesbyLocation(thisLocation) {
+
+	console.log("listing parades for ", thisLocation);
+	console.log("parades :: ", parades);
+	console.log("thisLocation :: ", thisLocation);
+
+	let domString = "";
+
+	domString += `<div><h2 id="jQueryH2Header">Parades in ${thisLocation}</h2>`;
+	domString += `<table>`;
+	domString += `<thead><tr>`;
+	domString += `<th>Parade</th>`;
+	domString += `<th>Date</th>`;
+	domString += `<th>Time</th>`;
+	domString += `</tr></thead>`;
+	domString += `<tbody>`;
+
+	for (var key in parades){
+		if (parades[key].location === thisLocation) 
+		{
+			domString += `<tr>`;
+			domString += `<td>${parades[key].parade}</td>`;
+			domString += `<td>${parades[key].date}</td>`;
+			domString += `<td>${parades[key].time}</td>`;
+			domString += `</tr>`;
+		}
+	}
+	domString += `</tbody></table>`;
+	domString += `</div>`;
+	$("#paradeOutputByLocation").html(domString);
+};
 
