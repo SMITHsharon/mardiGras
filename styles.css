@@ -1,6 +1,7 @@
 
 body {
 	background-color: #d1c7e0;
+	font-family: 'Philosopher', sans-serif;
 }
 
 .container {
@@ -15,4 +16,13 @@ body {
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
+}
+
+td {
+	padding-right: 50px;
+}
+
+#jQueryH2Header {
+	font-size: 1.8em;
+	font-weight: 600;
 }
