@@ -161,28 +161,48 @@ function listParadesbyLocation(thisLocation) {
 	console.log("thisLocation :: ", thisLocation);
 
 	let domString = "";
+	let firstParade = true;
 
 	domString += `<div><h2 id="jQueryH2Header">Parades in ${thisLocation}</h2>`;
-	domString += `<table>`;
-	domString += `<thead><tr>`;
-	domString += `<th>Parade</th>`;
-	domString += `<th>Date</th>`;
-	domString += `<th>Time</th>`;
-	domString += `</tr></thead>`;
-	domString += `<tbody>`;
 
 	for (var key in parades){
 		if (parades[key].location === thisLocation) 
-		{
-			domString += `<tr>`;
-			domString += `<td>${parades[key].parade}</td>`;
-			domString += `<td>${parades[key].date}</td>`;
-			domString += `<td>${parades[key].time}</td>`;
-			domString += `</tr>`;
-		}
+			if (firstParade || (parades[key].date != dateHasBeenWritten))
+			{
+				domString += writeDOM(thisLocation, parades, key);
+				dateHasBeenWritten = parades[key].date;
+				firstParade = false;
+			}
 	}
-	domString += `</tbody></table>`;
-	domString += `</div>`;
+	
 	$("#paradeOutputByLocation").html(domString);
 };
+
+function writeDOM (thisLocation, parades, key) {
+
+	let thisDate = parades[key].date;
+
+	let partialString = "";
+	partialString += `<table>`;
+	partialString += `<thead><tr>`;
+	partialString += `<th>${parades[key].date}</th>`;
+	partialString += `<th>Time</th>`;
+	partialString += `</tr></thead>`;
+	partialString += `<tbody>`;
+
+	for (var key in parades){
+		if ( (parades[key].location === thisLocation) 
+			  && (parades[key].date === thisDate) ) 
+		{
+			partialString += `<tr>`;
+			partialString += `<td>${parades[key].parade}</td>`;
+			partialString += `<td>${parades[key].time}</td>`;
+			partialString += `</tr>`;
+		}
+	}
+	partialString += `</tbody></table>`;
+
+	return partialString;
+};
+
 
