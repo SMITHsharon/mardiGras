@@ -18,11 +18,16 @@ body {
 	border-radius: 50%;
 }
 
+h1.title {
+	margin-top: 50px;
+	//margin-bottom: 0;
+}
+
 td {
 	width: 200px;
 }
 
-#jQueryH2Header {
-	font-size: 1.8em;
+#jQueryH4Header {
+	font-size: 1.5em;
 	font-weight: 600;
 }
