@@ -19,7 +19,7 @@ body {
 }
 
 td {
-	padding-right: 50px;
+	width: 200px;
 }
 
 #jQueryH2Header {

@@ -136,10 +136,6 @@ var parades = [
 
 $(function(){
       function getLocation(event) {
-            //alert('some anchor clicked');
-            console.log("event :: ", event);
-            console.log("event.currentTarget :: ", event.currentTarget);
-            console.log("event.currentTarget.id :: ", event.currentTarget.id);
             let selectedLocation = event.currentTarget.id;
             listParadesbyLocation(selectedLocation);
             return false;
@@ -150,39 +146,123 @@ $(function(){
 });
 
 
+$(function(){
+	function getByTimes(event) {
+            let selectedTime = event.currentTarget.id;
+            listParadesByTime(selectedTime);
+            return false;
+	}
+	$('#timeAnchorlist > a').click(getByTimes);
+});
+
+
+
+// ******************************************************
+// function writes the Parades for the selected Location 
+// to the DOM
+// ******************************************************
+function listParadesByTime(thisTime) {
+
+	let domString = "";
+	let firstParade = true;
+
+	domString += `<div><h2 id="jQueryH2Header">Parades at ${thisTime}</h2>`;
+
+	for (var key in parades){
+		if (parades[key].time === thisTime) 
+			if (firstParade || (parades[key].date != dateHasBeenWritten))
+			{
+				domString += writeDOMSelectedTime(thisTime, parades, key);
+				dateHasBeenWritten = parades[key].date;
+				firstParade = false;
+			}
+	}
+
+	$("#paradeOutputByLocation").html(domString);
+};
+
+
+
 // ******************************************************
 // function writes the Parades for the selected Location 
 // to the DOM
 // ******************************************************
 function listParadesbyLocation(thisLocation) {
 
-	console.log("listing parades for ", thisLocation);
-	console.log("parades :: ", parades);
-	console.log("thisLocation :: ", thisLocation);
-
 	let domString = "";
+	let firstParade = true;
 
 	domString += `<div><h2 id="jQueryH2Header">Parades in ${thisLocation}</h2>`;
-	domString += `<table>`;
-	domString += `<thead><tr>`;
-	domString += `<th>Parade</th>`;
-	domString += `<th>Date</th>`;
-	domString += `<th>Time</th>`;
-	domString += `</tr></thead>`;
-	domString += `<tbody>`;
 
 	for (var key in parades){
 		if (parades[key].location === thisLocation) 
-		{
-			domString += `<tr>`;
-			domString += `<td>${parades[key].parade}</td>`;
-			domString += `<td>${parades[key].date}</td>`;
-			domString += `<td>${parades[key].time}</td>`;
-			domString += `</tr>`;
-		}
+			if (firstParade || (parades[key].date != dateHasBeenWritten))
+			{
+				domString += writeDOMSelectedLocation(thisLocation, parades, key);
+				dateHasBeenWritten = parades[key].date;
+				firstParade = false;
+			}
 	}
-	domString += `</tbody></table>`;
-	domString += `</div>`;
+
 	$("#paradeOutputByLocation").html(domString);
 };
+
+
+
+function writeDOMSelectedLocation (thisLocation, parades, key) {
+
+	let thisDate = parades[key].date;
+
+	let partialString = "";
+	partialString += `<table>`;
+	partialString += `<thead><tr>`;
+	partialString += `<th>${parades[key].date}</th>`;
+	partialString += `<th>Time</th>`;
+	partialString += `</tr></thead>`;
+	partialString += `<tbody>`;
+
+	for (var key in parades){
+		if ( (parades[key].location === thisLocation) 
+			  && (parades[key].date === thisDate) ) 
+		{
+			partialString += `<tr>`;
+			partialString += `<td>${parades[key].parade}</td>`;
+			partialString += `<td>${parades[key].time}</td>`;
+			partialString += `</tr>`;
+		}
+	}
+	partialString += `</tbody></table>`;
+
+	return partialString;
+};
+
+
+
+function writeDOMSelectedTime (thisTime, parades, key) {
+
+	let thisDate = parades[key].date;
+
+	let partialString = "";
+	partialString += `<table>`;
+	partialString += `<thead><tr>`;
+	partialString += `<th>${parades[key].date}</th>`;
+	partialString += `<th>Parade</th>`;
+	partialString += `</tr></thead>`;
+	partialString += `<tbody>`;
+
+	for (var key in parades){
+		if ( (parades[key].time === thisTime) 
+			  && (parades[key].date === thisDate) ) 
+		{
+			partialString += `<tr>`;
+			partialString += `<td>${parades[key].location}</td>`;
+			partialString += `<td>${parades[key].parade}</td>`;
+			partialString += `</tr>`;
+		}
+	}
+	partialString += `</tbody></table>`;
+
+	return partialString;
+};
+
 

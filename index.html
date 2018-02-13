@@ -22,103 +22,94 @@
         <div class="navbar-menu">
 
           <div class="navbar-item has-dropdown is-hoverable">
-
             <div>
-              <a class="navbar-item">
-                List Parades for
+              <a class="navbar-item navbar-tab-hover-background-color">
+                List Parades for ...
               </a>
             
-            <div id="anchorlist" class="navbar-dropdown">
-              <a id="Covington" class="navbar-item">
-                Covington
+              <div id="anchorlist" class="navbar-dropdown">
+                <a id="Covington" class="navbar-item">
+                  Covington
+                </a>
+                <a id="Metairie" class="navbar-item">
+                  Metairie
+                </a>
+                <a id="Midtown" class="navbar-item">
+                  Midtown
+                </a>
+                </a>
+                <a id="Uptown" class="navbar-item">
+                  Uptown
+                </a>
+                <a id="Westbank" class="navbar-item">
+                  Westbank
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <div>
+              <a class="navbar-item navbar-tab-hover-background-color">
+                Parades by Time...
               </a>
-              <a id="Metairie" class="navbar-item">
-                Metairie
-              </a>
-              <a id="Midtown" class="navbar-item">
-                Midtown
-              </a>
-              </a>
-              <a id="Uptown" class="navbar-item">
-                Uptown
-              </a>
-              <a id="Westbank" class="navbar-item">
-                Westbank
-              </a>
+              
+              <div id="timeAnchorlist" class="navbar-dropdown">
+                <a id="8:00am" class="navbar-item">
+                  8:00am
+                </a>
+                <a id="10:00am" class="navbar-item">
+                  10:00am
+                </a>
+                <a id="10:45am" class="navbar-item">
+                  10:45am
+                </a>
+                <a id="11:00am" class="navbar-item">
+                  11:00am
+                </a>
+                <a id="11:45am" class="navbar-item">
+                  11:45am
+                </a>
+                <a id="12:00pm" class="navbar-item">
+                  12:00pm
+                </a>
+                <a id="2:00pm" class="navbar-item">
+                  2:00pm
+                </a>
+                </a>
+                <a id="4:15pm" class="navbar-item">
+                  4:15pm
+                </a>
+                <a id="5:15pm" class="navbar-item">
+                  5:15pm
+                </a>
+                <a id="5:30pm" class="navbar-item">
+                  5:30pm
+                </a>
+                <a id="6:00pm" class="navbar-item">
+                  6:00pm
+                </a>
+                <a id="6:30pm" class="navbar-item">
+                  6:30pm
+                </a>
+                <a id="2:00pm" class="navbar-item">
+                  2:00pm
+                </a>
+              </div>
             </div>
           </div>
         </div>
-
-        <div>
-          <a id="byTime" class="navbar-item">
-            Parades by Time...
-          </a>
-        </div>
       </nav>
 
-      <div class="container column is-three-fifths is-offset-one-fifth">
+      <div class="container column is-4 is-offset-4">
         <h1 class="title">
           Mardi Gras Parades Map
         </h1>
-        <!--
-        <p class="subtitle">
-          Parades List
-        </p>
-      -->
-      <!--
-      <div>
-        <select id="selectElement" name="select">
-          <option value="initState" selected>Choose A Season Here!</option> 
-          <option value="winter">Winter</option> 
-          <option value="autumn">Autumn</option>
-          <option value="spring">Spring</option>
-        </select>
-      </div>
-      <div id="paradeDropdown" class="dropdown is-hoverable">
-        <div class="dropdown-trigger">
-          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-            <span>List Parades by ... </span>
-            <span class="icon is-small">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
+
+        <!-- container for output written to DOM -->
+        <div id="paradeOutputByLocation">
+          <!-- parade information is written here by jQuery -->
         </div>
-        <div class="dropdown-menu" id="dropdown-menu" role="menu">
-          <div id="anchorlist" class="dropdown-content">
-            <a class="dropdown-item" href="#">
-              ... Location
-            </a>
-
-            <a id="covington" class="dropdown-item">
-              Covington
-            </a>
-            <a id="metairie" class="dropdown-item" href="#">
-              Metairie
-            </a>
-            <a id="midtown" class="dropdown-item" href="#">
-              Midtown
-            </a>
-            </a>
-            <a id="uptown" class="dropdown-item" href="#">
-              Uptown
-            </a>
-            <a id="westbank" class="dropdown-item" href="#">
-              Westbank
-            </a>
-
-            <hr class="dropdown-divider" href="#">
-            <a class="dropdown-item">
-              ... Time
-            </a>
-          </div>
-        </div>
-      </div>
-      -->
-
-      <!-- container for output written to DOM -->
-      <div id="paradeOutputByLocation">
-        <!-- parade information is written here by jQuery -->
-      </div>
 
       </div>
     </section>
