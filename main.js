@@ -1,4 +1,5 @@
 
+
 var parades = [
   {
     parade: "Krewe of Iris",
@@ -134,6 +135,8 @@ var parades = [
   }
 ];
 
+
+
 function onLaunch() {
 
 	let domString = "";
@@ -149,61 +152,6 @@ function onLaunch() {
 	$("#westbankOutput").html(domString);
 };
 onLaunch();
-
-
-
-// ******************************************************
-// event listeners for dropdown menus
-// ******************************************************
-$(function(){
-      function getLocation(event) {
-            let selectedLocation = event.currentTarget.id;
-            let domString = listParadesbyLocation(selectedLocation);
-            $("#outputContainer").html(domString);
-            return false;
-      }
-      //$('#paradeDropdown').click(yourfunction);
-      //$('a.dropdown').click(yourfunction);
-      $('#anchorlist > a').click(getLocation);
-});
-
-
-$(function(){
-	function getByTimes(event) {
-            let selectedTime = event.currentTarget.id;
-            let domString = listParadesByTime(selectedTime);
-            $("#outputContainer").html(domString);
-            return false;
-	}
-	$('#timeAnchorlist > a').click(getByTimes);
-});
-
-
-
-// ******************************************************
-// function writes the Parades for the selected Location 
-// to the DOM
-// ******************************************************
-function listParadesByTime(thisTime) {
-
-	let domString = "";
-	let firstParade = true;
-
-	domString += `<div><h4 id="jQueryH4Header">Parades at ${thisTime}</h4>`;
-
-	for (var key in parades){
-		if (parades[key].time === thisTime) 
-			if (firstParade || (parades[key].date != dateHasBeenWritten))
-			{
-				domString += writeDOMSelectedTime(thisTime, parades, key);
-				dateHasBeenWritten = parades[key].date;
-				firstParade = false;
-			}
-	}
-
-	return domString;
-	//$("#paradeOutputByLocation").html(domString);
-};
 
 
 
@@ -263,6 +211,33 @@ function writeDOMSelectedLocation (thisLocation, parades, key) {
 
 
 
+// ******************************************************
+// function writes the Parades for the selected Location 
+// to the DOM
+// ******************************************************
+function listParadesByTime(thisTime) {
+
+	let domString = "";
+	let firstParade = true;
+
+	domString += `<div><h4 id="jQueryH4Header">Parades at ${thisTime}</h4>`;
+
+	for (var key in parades){
+		if (parades[key].time === thisTime) 
+			if (firstParade || (parades[key].date != dateHasBeenWritten))
+			{
+				domString += writeDOMSelectedTime(thisTime, parades, key);
+				dateHasBeenWritten = parades[key].date;
+				firstParade = false;
+			}
+	}
+
+	return domString;
+	//$("#paradeOutputByLocation").html(domString);
+};
+
+
+
 function writeDOMSelectedTime (thisTime, parades, key) {
 
 	let thisDate = parades[key].date;
@@ -291,3 +266,71 @@ function writeDOMSelectedTime (thisTime, parades, key) {
 };
 
 
+
+
+
+
+// ******************************************************
+// event listeners for dropdown menus
+// ******************************************************
+$(function(){
+      function getLocation(event) {
+            let selectedLocation = event.currentTarget.id;
+            let domString = listParadesbyLocation(selectedLocation);
+            $("#outputContainer").html(domString);
+            return false;
+      }
+      //$('#paradeDropdown').click(yourfunction);
+      //$('a.dropdown').click(yourfunction);
+      $('#anchorlist > a').click(getLocation);
+});
+
+
+
+$(function(){
+	function getByTimes(event) {
+            let selectedTime = event.currentTarget.id;
+            let domString = listParadesByTime(selectedTime);
+            $("#outputContainer").html(domString);
+            return false;
+	}
+	$('#timeAnchorlist > a').click(getByTimes);
+});
+
+
+
+// ******************************************************
+// event listeners for hamburger menu
+// toggles the class .is-active on both the .navbar-burger 
+// and the targeted .navbar-menu
+// ******************************************************
+//$( document ).ready(function() {
+	document.addEventListener('DOMContentLoaded', function () {
+
+	  // Get all "navbar-burger" elements
+	  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+	  // Check if there are any navbar burgers
+	  if ($navbarBurgers.length > 0) {
+
+	    // Add a click event on each of them
+	    $navbarBurgers.forEach(function ($el) {
+	      $el.addEventListener('click', function () {
+	      	console.log("$el.dataset :: ", $el.dataset);
+
+	        // Get the target from the "data-target" attribute
+	        var target = $el.dataset.target;
+	        var $target = document.getElementById(target);
+	        console.log("target :: ", target);
+
+	        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+	        $el.classList.toggle('is-active');
+	        $target.classList.toggle('is-active');
+
+	      });
+	    });
+	  }
+
+	});
+
+//});
