@@ -137,13 +137,16 @@ var parades = [
 function onLaunch() {
 
 	let domString = "";
-	domString += listParadesbyLocation("Covington");
-	domString += listParadesbyLocation("Metairie");
-	domString += listParadesbyLocation("Midtown");
-	domString += listParadesbyLocation("Uptown");
-	domString += listParadesbyLocation("Westbank");
-
-	$("#outputContainer").html(domString);
+	domString += `<hr>` + listParadesbyLocation("Covington");
+	$("#covingtonOutput").html(domString);
+	domString = `<hr>` + listParadesbyLocation("Metairie");
+	$("#metairieOutput").html(domString);
+	domString = `<hr>` + listParadesbyLocation("Midtown");
+	$("#midtownOutput").html(domString);
+	domString = `<hr>` + listParadesbyLocation("Uptown");
+	$("#uptownOutput").html(domString);
+	domString = `<hr>` + listParadesbyLocation("Westbank");
+	$("#westbankOutput").html(domString);
 };
 onLaunch();
 
@@ -199,7 +202,6 @@ function listParadesByTime(thisTime) {
 	}
 
 	return domString;
-
 	//$("#paradeOutputByLocation").html(domString);
 };
 
@@ -227,7 +229,6 @@ function listParadesbyLocation(thisLocation) {
 	}
 
 	return domString;
-
 	//$("#paradeOutputByLocation").html(domString);
 };
 
